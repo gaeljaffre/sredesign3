@@ -1,0 +1,61 @@
+<table align=center width="600px">
+	<TR text-align=left>
+		<TD>
+			<H2>
+				Please find here the partner shuttles:
+			</H2>
+		</TD>
+		<TD width=200px>
+		</TD>
+	</TR>
+</table>
+
+<!--
+<table align=center class="shuttle-item" *ngFor="let shuttle of shuttles">
+  <TR>
+    <B>
+      {{ shuttle.name }}
+    </B>
+  </TR>
+  <TR>
+    {{ shuttle.description }}
+  </TR>
+  <TR>
+    Partership from {{ shuttle.ddv }} to {{ shuttle.dfv }}
+  </TR>
+  <TR>
+	  Average price: {{ shuttle.prixMoyen }} €
+    / Average discount: {{ shuttle.remise }} %
+  </TR>
+</table>
+-->
+
+<table align=center class="shuttle-item" *ngFor="let shuttle of shuttles">
+  <TR>
+    <B>
+      {{ shuttle.name }}
+    </B>
+  </TR>
+  <TR>
+    <TD>
+      <table>
+        <TR>
+          {{ shuttle.description }}
+        </TR>
+        <TR>
+          Partership from {{ shuttle.ddv }} to {{ shuttle.dfv }}
+        </TR>
+        <TR>
+	        Average price: {{ shuttle.prixMoyen }} €
+          / Average discount: {{ shuttle.remise }} %
+        </TR>
+      </table>
+    </TD>
+    <TD>
+      <button (click)="gestionShuttles()">
+        Manage offers
+        &nbsp;
+        <mat-icon class="white-icon" mat-list-icon>directions_car</mat-icon>
+      </button>
+    </TD>
+</table>

@@ -1,0 +1,160 @@
+<table align=center>
+<H2>
+  <TR>
+    <TD width=400px>
+    <table>
+      <TR>
+        &nbsp;
+      </TR>
+      <TR>
+        Welcome to the new version of Robert S.
+      </TR>
+      <TR>
+        &nbsp;
+      </TR>
+      <TR>
+        Please choose your category:
+      </TR>
+    </table>
+    </TD>
+    <TD>
+      <mon-icone-sq nom="pirate1"></mon-icone-sq>
+    </TD>
+</H2>
+</table>
+
+<H2>
+ 
+ <!--
+ <A [routerLink]="['/contracts']">
+ <H2> 
+<table align=center class="menu-item">
+  <TR>
+    <B>Contract management</B>
+  </TR>
+</table>
+ </H2>
+ </A>
+
+<A [routerLink]="['/hotels']">
+<H2> 
+<table align=center class="menu-item">
+  <TR>
+    <TD><B>Hotel management</B></TD>
+  </TR>
+</table>
+</H2>
+</A>
+
+<A [routerLink]="['/shuttles']">
+<H2> 
+<table align=center class="menu-item">
+  <TR>
+    <TD><B>Shuttle management</B></TD>
+  </TR>
+</table>
+</H2>
+</A>
+-->
+
+<table height="40px">
+  &nbsp;
+</table>
+
+<table align=center>
+<div class="background">
+    <div class="panel pricing-table">
+      
+      <div class="pricing-plan">
+        <img src="https://www.iata.org/contentassets/cdd4a0eca5034d52a51f79241f9825c5/safety-flight-ops.png?w=330&h=200&mode=crop&scale=both&v=20191129103510" height=100>
+        <a class="pricing-button"
+          [routerLink]="['/contracts']"
+        >
+          Contract management
+        </a>
+      </div>
+      
+      <div class="pricing-plan">
+        <img src="https://cdn2.iconfinder.com/data/icons/hotel-cartoon/512/sim3992-512.png" height=100>
+        <a class="pricing-button"
+           [routerLink]="['/hotels']"
+        >
+          Hotel management
+        </a>
+      </div>
+      
+      <div class="pricing-plan">
+        <img src="https://cdn2.rcstatic.com/images/site_graphics/newsite/res_car_us.png" height=100>
+        <a class="pricing-button"
+          [routerLink]="['/shuttles']"
+        >
+          Shuttle management
+        </a>
+      </div>
+      
+    </div>
+</div>
+</table>
+
+
+
+<!------------------>
+<!-- Last visited -->
+<!------------------>
+
+  <div style="height: 40px;">
+  </div>
+
+<font size="-1">
+
+<H3>
+<table align=center width="600px">
+  <TR>
+    <TD *ngIf="!afficherLastVisited">
+      <A (click)="changerLastvisited()">
+        See last visited:
+        <mat-icon mat-list-icon>double_arrow</mat-icon>
+      </A>
+    </TD>
+    <TD *ngIf="afficherLastVisited">
+      <A (click)="changerLastvisited()">
+        Last visited:
+        <mat-icon mat-list-icon>expand_more</mat-icon>
+      </A>
+    </TD>
+</table>
+</H3>
+</font>
+
+<div name="lastVisitedDiv" *ngIf="afficherLastVisited">
+<H2> 
+<font size="-1">
+
+<table align=center class="menu-item" *ngFor="let contrat of lastVisited">
+  <B>
+  {{ contrat.country }} &nbsp;&nbsp;
+  </B>
+
+  <!-- Description en info-bulle -->
+  <b *ngIf="contrat.description" [title]="contrat.description">
+  {{ contrat.name }}
+  </b>
+  <font *ngIf="!contrat.description">
+  {{ contrat.name }}
+  </font>
+
+  {{ contrat.ddv }} - {{ contrat.dfv }}
+
+  &nbsp;
+  <button
+    (click)="sauverContratCourant(contrat)"
+    [routerLink]="['/details']"
+  >
+    <mon-icone-sq nom="plane"></mon-icone-sq>
+    &nbsp;
+    Manage
+  </button>
+</table>
+</font>
+</H2>
+</div>
