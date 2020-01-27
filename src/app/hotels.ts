@@ -32,6 +32,7 @@ export const listeHotels = [
     description: 'Anywhere in the world',
     ddv: '01/01/2019',
     dfv: '31/12/2024',
+    prixMoyen: 150,
     remise: 12,
   },
   {
@@ -40,6 +41,7 @@ export const listeHotels = [
     description: 'Anywhere in France',
     ddv: '01/01/2017',
     dfv: '31/12/2028',
+    prixMoyen: 85,
     remise: 25,
   },
 

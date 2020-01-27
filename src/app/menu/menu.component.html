@@ -24,43 +24,12 @@
 </table>
 
 <H2>
- 
- <!--
- <A [routerLink]="['/contracts']">
- <H2> 
-<table align=center class="menu-item">
-  <TR>
-    <B>Contract management</B>
-  </TR>
-</table>
- </H2>
- </A>
-
-<A [routerLink]="['/hotels']">
-<H2> 
-<table align=center class="menu-item">
-  <TR>
-    <TD><B>Hotel management</B></TD>
-  </TR>
-</table>
-</H2>
-</A>
-
-<A [routerLink]="['/shuttles']">
-<H2> 
-<table align=center class="menu-item">
-  <TR>
-    <TD><B>Shuttle management</B></TD>
-  </TR>
-</table>
-</H2>
-</A>
--->
-
-<table height="40px">
+ <table height="40px">
   &nbsp;
 </table>
+</H2>
 
+<!--
 <table align=center>
 <div class="background">
     <div class="panel pricing-table">
@@ -95,7 +64,44 @@
     </div>
 </div>
 </table>
+-->
 
+<table align=center class="choix">
+  <TR>
+    <TD align=center width="200px">
+      <img src="https://www.iata.org/contentassets/cdd4a0eca5034d52a51f79241f9825c5/safety-flight-ops.png?w=330&h=200&mode=crop&scale=both&v=20191129103510" height=100>
+    </TD>
+    <TD align=center width="200px">
+      <img src="https://cdn2.iconfinder.com/data/icons/hotel-cartoon/512/sim3992-512.png" height=100>
+    </TD>
+    <TD align=center width="200px">
+      <img src="https://cdn2.rcstatic.com/images/site_graphics/newsite/res_car_us.png" height=100>
+    </TD>
+  </TR>
+  <TR>
+    <TD align=center>
+      <a class="pricing-button"
+          [routerLink]="['/contracts']"
+        >
+          CONTRACT<BR>MANAGEMENT
+        </a>
+    </TD>
+    <TD align=center>
+      <a class="pricing-button"
+           [routerLink]="['/hotels']"
+        >
+          HOTEL<BR>MANAGEMENT
+        </a>
+    </TD>
+    <TD align=center>
+      <a class="pricing-button"
+          [routerLink]="['/shuttles']"
+        >
+          SHUTTLE<BR>MANAGEMENT
+        </a>
+    </TD>
+  </TR>
+</table>
 
 
 <!------------------>
@@ -112,7 +118,7 @@
   <TR>
     <TD *ngIf="!afficherLastVisited">
       <A (click)="changerLastvisited()">
-        See last visited:
+        View last visited:
         <mat-icon mat-list-icon>double_arrow</mat-icon>
       </A>
     </TD>

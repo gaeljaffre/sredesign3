@@ -99,3 +99,7 @@ td {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
+
+choix td {
+    align: center;
+}
