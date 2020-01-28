@@ -2,7 +2,7 @@
 	<TR text-align=left>
 		<TD>
 			<H2>
-				Please find here the partner shuttles:
+				Please find here the partner :
 			</H2>
 		</TD>
 		<TD width=200px>
@@ -52,10 +52,15 @@
       </table>
     </TD>
     <TD>
-      <button (click)="gestionShuttles()">
+      <button *ngIf="shuttle.type=='rental'" (click)="gestionShuttles()">
         Manage offers
         &nbsp;
         <mat-icon class="white-icon" mat-list-icon>directions_car</mat-icon>
+      </button>
+      <button *ngIf="shuttle.type=='shuttle'" (click)="gestionShuttles()">
+        Manage offers
+        &nbsp;
+        <mat-icon class="white-icon" mat-list-icon>airport_shuttle</mat-icon>
       </button>
     </TD>
 </table>
