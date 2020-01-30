@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { listeShuttles } from '../shuttles';
+import { ShuttleDaoService } from '../shuttle-dao.service';
 
 @Component({
   selector: 'app-gestion-shuttles',
@@ -9,11 +9,14 @@ import { listeShuttles } from '../shuttles';
 })
 export class GestionShuttlesComponent implements OnInit {
 
-  shuttles = listeShuttles;
+  shuttles;
 
-  constructor() { }
+  constructor(
+    private shuttleDaoService: ShuttleDaoService
+  ) { }
 
   ngOnInit() {
+    this.shuttles = this.shuttleDaoService.getListeShuttles();
   }
 
   gestionShuttles() {

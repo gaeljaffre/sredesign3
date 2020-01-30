@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable, BehaviorSubject} from "rxjs";
+import { Observable } from "rxjs";
 
 export const url = 'https://RedesignBackend.voyagesgael.repl.co/';
 
@@ -68,7 +68,7 @@ export class ContratDaoService {
           if(data.length) {
             for (let clause of data) {
               liste.push(clause);
-              /console.log("ligne = " + clause.ori + "-" + clause.des);
+              //console.log("ligne = " + clause.ori + "-" + clause.des);
             }
           }
       }
