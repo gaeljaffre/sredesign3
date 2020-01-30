@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
     //window.alert('manage ' + contrat.name);
   }
 
-  changerLastvisited() {
+  changerLastVisited() {
     this.afficherLastVisited = !this.afficherLastVisited;
   }
 
