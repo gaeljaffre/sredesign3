@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { listeClauses } from '../clauses';
 import { DetailContratService } from '../detail-contrat.service';
+import { ContratDaoService } from '../contrat-dao.service';
 
 @Component({
   selector: 'app-liste-offres',
@@ -13,15 +13,17 @@ import { DetailContratService } from '../detail-contrat.service';
 export class ListeOffresComponent implements OnInit {
 
   contrat;
-  listeClauses = listeClauses;
+  listeClauses;
 
   constructor(
     private route: ActivatedRoute,
-    private detailContratService: DetailContratService
+    private detailContratService: DetailContratService,
+    private contratDaoService: ContratDaoService
   ) { }
 
   ngOnInit() {
     this.contrat = this.detailContratService.contratCourant();
+    this.listeClauses = this.contratDaoService.getListeClauses();
   }
 
 }

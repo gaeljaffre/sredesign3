@@ -15,6 +15,18 @@ export interface Contrat {
   dfv: string;
 }
 
+export interface Clause {
+  idContrat: number;
+  ori: string;
+  des: string;
+  cdr: string;
+  farebasis: string;
+  cie: string;
+  ddv: string;
+  dfv: string;
+  remise: number;
+}
+
 @Injectable()
 export class ContratDaoService {
 
@@ -23,7 +35,6 @@ export class ContratDaoService {
   ) { }
 
   getConfigContrats(): Observable<Contrat[]> {
-    // now returns an Observable of Contrat[]
     return this.http.get<Contrat[]>(url + "contrats");
   }
 
@@ -48,4 +59,27 @@ export class ContratDaoService {
       );
     return liste;
   }
+
+    getListeClauses(): Clause[] {
+      let liste: Clause[] = [];
+
+      this.http.get(url + "clauses").subscribe(
+        (data: any[]) => {
+          if(data.length) {
+            for (let clause of data) {
+              liste.push(clause);
+              /console.log("ligne = " + clause.ori + "-" + clause.des);
+            }
+          }
+      }
+      , err => {
+                console.log("Erreur : " + err.message);
+              },
+        () => {
+          //console.log('completed');
+        }
+      );
+    return liste;
+  }
+
 }

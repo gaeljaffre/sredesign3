@@ -32,7 +32,7 @@ export const listeClauses = [
     ddv: '01/01/2020',
     dfv: '31/12/2020',
     remise: 4,
-},
+  },
   {
     idContrat: 1,
     ori: 'TLS',
