@@ -22,6 +22,7 @@ import { GestionContratsComponent } from './gestion-contrats/gestion-contrats.co
 import { GestionHotelsComponent } from './gestion-hotels/gestion-hotels.component';
 import { GestionShuttlesComponent } from './gestion-shuttles/gestion-shuttles.component';
 import { MonIconeSqComponent } from './mon-icone-sq/mon-icone-sq.component';
+import { ContratDaoService } from './contrat-dao.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, DemoMaterialModule, BrowserAnimationsModule,
@@ -38,7 +39,7 @@ import { MonIconeSqComponent } from './mon-icone-sq/mon-icone-sq.component';
       ]) ],
   declarations: [ AppComponent, TopBarComponent, GestionContratsComponent, DetailContratComponent, BandeauContratComponent, ListeOffresComponent, UpgradeOffreComponent, MonIconeComponent, BandeauxComponent, AboutComponent, AdminParametersComponent, MenuComponent, GestionHotelsComponent, GestionShuttlesComponent, MonIconeSqComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [DetailContratService]
+  providers: [DetailContratService, ContratDaoService]
 })
 export class AppModule { 
 

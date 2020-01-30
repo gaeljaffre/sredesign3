@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { listeContrats } from '../contrats';
 import { DetailContratService } from '../detail-contrat.service';
 import { MonIconeComponent } from '../mon-icone/mon-icone.component';
+import { ContratDaoService } from '../contrat-dao.service';
 
 @Component({
   selector: 'app-gestion-contrats',
@@ -11,13 +12,15 @@ import { MonIconeComponent } from '../mon-icone/mon-icone.component';
 })
 export class GestionContratsComponent implements OnInit {
 
-  contractsList = listeContrats;
+  contractsList;
 
   constructor(
-    private detailContratService: DetailContratService
+    private detailContratService: DetailContratService,
+    private contratDaoService: ContratDaoService
   ) { }
 
   ngOnInit() {
+    this.contractsList = this.contratDaoService.getListeContrats();
   }
 
   sauverContratCourant(contrat) {
