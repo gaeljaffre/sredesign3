@@ -28,7 +28,7 @@ export class HotelDaoService {
           if(data.length) {
             for (let hotel of data) {
               liste.push(hotel);
-              /console.log("ligne = " + hotel.name);
+              //console.log("ligne = " + hotel.name);
             }
           }
       }

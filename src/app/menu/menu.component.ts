@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { listeContrats } from '../contrats';
 import { DetailContratService } from '../detail-contrat.service';
+
+// à supprimer
+import { listeContrats } from '../old_contrats';
+
 
 @Component({
   selector: 'app-menu',
@@ -18,6 +21,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // à modifier
     this.lastVisited = [];
     this.lastVisited.push(listeContrats[1]);
     this.lastVisited.push(listeContrats[0]);
