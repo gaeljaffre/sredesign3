@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { listeHotels } from '../hotels';
+import { HotelDaoService } from '../hotel-dao.service';
 
 @Component({
   selector: 'app-gestion-hotels',
@@ -9,11 +9,14 @@ import { listeHotels } from '../hotels';
 })
 export class GestionHotelsComponent implements OnInit {
 
-  hotels = listeHotels;
+  hotels;
 
-  constructor() { }
+  constructor(
+    private hotelDaoService: HotelDaoService
+  ) { }
 
   ngOnInit() {
+    this.hotels = this.hotelDaoService.getListeHotels();
   }
 
   gestionHotels() {

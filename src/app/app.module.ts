@@ -24,6 +24,7 @@ import { GestionShuttlesComponent } from './gestion-shuttles/gestion-shuttles.co
 import { MonIconeSqComponent } from './mon-icone-sq/mon-icone-sq.component';
 import { ContratDaoService } from './contrat-dao.service';
 import { ShuttleDaoService } from './shuttle-dao.service';
+import { HotelDaoService } from './hotel-dao.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, DemoMaterialModule, BrowserAnimationsModule,
@@ -40,7 +41,7 @@ import { ShuttleDaoService } from './shuttle-dao.service';
       ]) ],
   declarations: [ AppComponent, TopBarComponent, GestionContratsComponent, DetailContratComponent, BandeauContratComponent, ListeOffresComponent, UpgradeOffreComponent, MonIconeComponent, BandeauxComponent, AboutComponent, AdminParametersComponent, MenuComponent, GestionHotelsComponent, GestionShuttlesComponent, MonIconeSqComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [DetailContratService, ContratDaoService, ShuttleDaoService]
+  providers: [DetailContratService, ContratDaoService, ShuttleDaoService, HotelDaoService]
 })
 export class AppModule { 
 
