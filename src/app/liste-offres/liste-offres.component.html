@@ -28,7 +28,14 @@
       </button>
     </TD>
   </TR>
-   </table>
+  <TR *ngIf="listeClauses.length==0">
+    &nbsp;
+    <BR>
+    &nbsp; no offer
+    <BR>
+    &nbsp;
+  </TR>
+  </table>
 </div>
 
 
