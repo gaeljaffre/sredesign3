@@ -62,10 +62,10 @@ export class ContratDaoService {
     return liste;
   }
 
-    getListeClauses(): Clause[] {
+    getListeClauses(contratId: number): Clause[] {
       let liste: Clause[] = [];
 
-      this.http.get(url + "clauses").subscribe(
+      this.http.get(url + "clauses/" + contratId).subscribe(
         (data: any[]) => {
           if(data.length) {
             for (let clause of data) {

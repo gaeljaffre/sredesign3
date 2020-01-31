@@ -23,7 +23,7 @@ export class ListeOffresComponent implements OnInit {
 
   ngOnInit() {
     this.contrat = this.detailContratService.contratCourant();
-    this.listeClauses = this.contratDaoService.getListeClauses();
+    this.listeClauses = this.contratDaoService.getListeClauses(this.contrat.id);
   }
 
 }
