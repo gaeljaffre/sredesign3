@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // à modifier
+    // à modifier : à construire automatiquement
     this.lastVisited = [];
     this.lastVisited.push(listeContrats[1]);
     this.lastVisited.push(listeContrats[0]);
