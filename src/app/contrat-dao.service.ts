@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 
-export const url = 'https://RedesignBackend.voyagesgael.repl.co/';
+import { urlBackend } from './config-bd';
+
+export const url = urlBackend;
 
 export interface Contrat {
   id: number;
