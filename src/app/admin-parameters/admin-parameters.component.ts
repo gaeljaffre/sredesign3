@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { environment } from '../../environments/environment';
 import { urlBackend } from '../config-bd';
 
 @Component({
@@ -10,6 +11,7 @@ import { urlBackend } from '../config-bd';
 export class AdminParametersComponent implements OnInit {
 
   url = urlBackend;
+  prodMode = environment.production;
 
   constructor() { }
 
