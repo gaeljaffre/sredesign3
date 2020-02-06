@@ -20,7 +20,7 @@ export class GestionHotelsComponent implements OnInit {
   }
 
   gestionHotels() {
-    window.alert("You do not have sufficient privileges");
+    window.alert("You do not have enough privileges");
   }
 
 }
